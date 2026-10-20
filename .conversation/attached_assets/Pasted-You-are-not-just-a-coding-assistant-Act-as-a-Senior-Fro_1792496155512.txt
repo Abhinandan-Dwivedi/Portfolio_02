@@ -1,0 +1,1547 @@
+You are not just a coding assistant.
+
+Act as a:
+- Senior Frontend Engineer
+- Senior Product Designer
+- UI/UX Designer
+- Design System Engineer
+- Creative Director for premium developer portfolios
+
+Your task is to design and build a HIGH-END personal developer portfolio that feels intentionally designed by a talented human designer and senior frontend engineer.
+
+The final website should NOT look like an AI-generated portfolio template.
+
+It should feel like a real developer's personal website that could confidently be shown to:
+- Google recruiters
+- Microsoft recruiters
+- Meta recruiters
+- Stripe recruiters
+- startup founders
+- senior engineers
+- technical hiring managers
+
+The website should communicate:
+
+"THIS PERSON CAN ACTUALLY BUILD SOFTWARE."
+
+Not:
+
+"THIS PERSON USED AN AI WEBSITE GENERATOR."
+
+==================================================
+0. SOURCE OF TRUTH — VERY IMPORTANT
+==================================================
+
+I will provide my LaTeX resume after this prompt.
+
+The resume is the ONLY source of truth for my professional information.
+
+Extract information from the resume for:
+
+- Name
+- Professional summary
+- Education
+- College
+- Degree
+- CGPA
+- Graduation year
+- Technical skills
+- Projects
+- Project descriptions
+- Technologies
+- GitHub links
+- Live links
+- Experience
+- Internships
+- Achievements
+- Certifications
+- LinkedIn
+- GitHub
+- Email
+- Resume information
+- Any other professional information
+
+DO NOT invent anything.
+
+DO NOT create:
+- fake companies
+- fake internships
+- fake achievements
+- fake certifications
+- fake metrics
+- fake users
+- fake project statistics
+- fake testimonials
+- fake clients
+- fake ratings
+- fake skill percentages
+- fake links
+
+If information is unavailable, omit it.
+
+Never "improve" my resume by inventing information.
+
+You may improve the PRESENTATION and UX of the content, but never fabricate the CONTENT.
+
+==================================================
+1. CORE TECHNOLOGY
+==================================================
+
+Use:
+
+React
+Vite
+TypeScript
+Tailwind CSS
+Lucide React
+
+Use React Router ONLY if multiple pages genuinely make sense.
+
+Otherwise build a high-quality single-page portfolio.
+
+Do not introduce unnecessary libraries.
+
+Before installing a dependency, ask:
+
+"Can this be implemented cleanly without another dependency?"
+
+If yes, don't install it.
+
+==================================================
+2. BACKEND DECISION
+==================================================
+
+This portfolio should be STATIC by default.
+
+Do NOT build a backend.
+
+Portfolio content should be stored locally in TypeScript data files.
+
+Use:
+
+src/
+  data/
+    portfolio.ts
+
+For example:
+
+personalInfo
+education
+skills
+projects
+experience
+achievements
+certifications
+socialLinks
+
+Use localStorage ONLY when there is an actual reason.
+
+Examples:
+- theme preference
+- UI preference
+
+Do NOT use localStorage to store portfolio content unnecessarily.
+
+CONTACT:
+
+If the contact section only contains:
+
+Email
+GitHub
+LinkedIn
+
+NO backend is required.
+
+If a working contact form is desired, use a service such as Formspree or EmailJS.
+
+Do NOT create a Node/Express backend just for a portfolio contact form.
+
+At the end explicitly tell me:
+
+"Backend required: NO"
+
+unless a real backend is genuinely necessary.
+
+==================================================
+3. DESIGN PHILOSOPHY
+==================================================
+
+The design should combine:
+
+Premium developer portfolio
++
+Editorial design
++
+Modern engineering aesthetic
++
+Subtle interaction design
+
+The website should feel:
+
+minimal
+technical
+confident
+mature
+premium
+intentional
+fast
+human
+
+Avoid anything that feels like a template.
+
+Do not try to impress the user with excessive visual effects.
+
+Instead, impress through:
+
+Typography
+Spacing
+Composition
+Hierarchy
+Micro-interactions
+Content presentation
+Consistency
+Attention to detail
+
+==================================================
+4. VISUAL REFERENCES
+==================================================
+
+I will provide visual references.
+
+REFERENCE A — PROJECT CARDS
+
+The project card structure should follow this hierarchy:
+
+PROJECT IMAGE
+↓
+Project name + year
+↓
+Short description
+↓
+Technology stack
+↓
+Primary actions
+
+For example:
+
+┌─────────────────────────────────────┐
+│                                     │
+│         PROJECT SCREENSHOT          │
+│                                     │
+│                                     │
+├─────────────────────────────────────┤
+│                                     │
+│ FleetTrack                  2025    │
+│                                     │
+│ A SaaS fleet management platform    │
+│ designed for...                     │
+│                                     │
+│ Next.js  tRPC  MongoDB  Docker      │
+│                                     │
+│ [Live Website ↗]    [GitHub ↗]      │
+│                                     │
+└─────────────────────────────────────┘
+
+Do NOT copy the reference literally.
+
+Use the INFORMATION HIERARCHY as inspiration.
+
+REFERENCE B — SKILLS
+
+Skills should be organized into category cards rather than one giant list.
+
+However, create a much more sophisticated version of the reference.
+
+==================================================
+5. OVERALL VISUAL DIRECTION
+==================================================
+
+Use a DARK PREMIUM FOUNDATION.
+
+Background:
+
+near-black / charcoal
+
+Example direction:
+
+#09090B
+#0C0C0F
+#111113
+
+Do NOT make the entire website pure black.
+
+Use subtle tonal differences between:
+
+background
+sections
+cards
+borders
+
+Cards should have subtle contrast rather than obvious shadows.
+
+Example:
+
+background:
+very dark
+
+card:
+slightly lighter
+
+border:
+very subtle
+
+The UI should feel tactile but restrained.
+
+==================================================
+6. COLOR SYSTEM
+==================================================
+
+Use primarily:
+
+- off-white
+- white
+- neutral gray
+- muted gray
+- dark charcoal
+
+Use ONE accent color.
+
+The accent should be restrained.
+
+Do not create:
+
+purple + pink + blue + cyan + green gradients.
+
+Do not use "AI purple".
+
+The accent should support hierarchy rather than dominate the design.
+
+Create CSS variables for the design system.
+
+For example:
+
+--background
+--surface
+--surface-elevated
+--border
+--foreground
+--muted
+--accent
+
+==================================================
+7. TYPOGRAPHY
+==================================================
+
+Typography is one of the most important parts of this website.
+
+Use a premium modern font such as:
+
+Inter
+Geist
+Manrope
+
+Use strong hierarchy.
+
+Hero:
+large but NOT ridiculously large
+
+Section titles:
+clear and editorial
+
+Body:
+high readability
+
+Metadata:
+small and muted
+
+Avoid:
+
+huge 100px headings everywhere.
+
+The typography should resemble a carefully designed product website.
+
+Use proper:
+
+font-weight
+letter-spacing
+line-height
+max-width
+
+Do not center every piece of text.
+
+Use left-aligned editorial layouts where appropriate.
+
+==================================================
+8. PAGE COMPOSITION
+==================================================
+
+Do NOT simply create:
+
+Hero
+Section
+Section
+Section
+Section
+Footer
+
+with identical spacing.
+
+The page should have RHYTHM.
+
+Some sections should be:
+
+full-width
+
+Some:
+
+contained
+
+Some:
+
+two-column
+
+Some:
+
+grid-based
+
+Some:
+
+timeline/editorial
+
+Create visual variation without becoming chaotic.
+
+The user should feel that every section has been intentionally composed.
+
+==================================================
+9. NAVIGATION
+==================================================
+
+Create a premium floating/sticky navbar.
+
+Desktop:
+
+left:
+Name / initials
+
+right:
+
+About
+Skills
+Projects
+Experience
+Achievements
+Contact
+
+Resume
+
+The navbar should initially be subtle.
+
+After scrolling:
+
+slightly translucent surface
+subtle border
+small backdrop blur
+
+Do not create a giant navbar.
+
+Mobile:
+
+compact menu
+
+smooth opening animation
+
+No huge full-screen menu unless necessary.
+
+==================================================
+10. HERO — MOST IMPORTANT FIRST IMPRESSION
+==================================================
+
+The hero should immediately answer:
+
+WHO ARE YOU?
+
+WHAT DO YOU BUILD?
+
+WHAT KIND OF ENGINEER ARE YOU?
+
+Do not use generic copy such as:
+
+"Passionate developer creating amazing digital experiences."
+
+That sounds AI-generated.
+
+Use my resume to construct concise, credible positioning.
+
+Possible structure:
+
+Small label:
+
+COMPUTER SCIENCE ENGINEER
+
+Large:
+
+[MY NAME]
+
+Then a strong professional positioning statement.
+
+Example style:
+
+"Full-stack developer building reliable web applications and exploring intelligent software."
+
+But generate this from my actual resume.
+
+Then:
+
+Short 2–3 line summary.
+
+CTA:
+
+[View Projects]
+[Download Resume]
+
+Secondary links:
+
+GitHub
+LinkedIn
+Email
+
+The hero should have strong visual composition.
+
+Consider a subtle side element such as:
+
+availability indicator
+location
+current focus
+small technical metadata
+
+BUT ONLY if supported by my resume.
+
+Do not add fake availability.
+
+==================================================
+11. HERO VISUAL STYLE
+==================================================
+
+Do NOT use:
+
+3D developer illustrations
+floating laptops
+floating code snippets
+random geometric blobs
+AI-generated portraits
+stock images
+
+Instead use:
+
+typography
+subtle grid
+fine borders
+small technical details
+negative space
+
+A subtle background grid/noise is acceptable.
+
+But it must be barely noticeable.
+
+==================================================
+12. ABOUT
+==================================================
+
+Do not simply display a huge paragraph.
+
+Create an editorial two-column layout.
+
+LEFT:
+
+About
+
+RIGHT:
+
+short professional narrative
+
+Then a small information block:
+
+Education
+Focus
+Technologies
+Location
+
+ONLY use actual resume data.
+
+Include:
+
+[Download Resume]
+
+The section should feel like a human introducing himself professionally.
+
+==================================================
+13. EDUCATION
+==================================================
+
+Create a premium academic profile.
+
+Primary institution:
+
+Indian Institute of Information Technology, Sonepat
+
+Degree:
+
+Bachelor of Technology in Computer Science and Engineering
+
+Include:
+
+CGPA
+Duration
+Graduation year
+
+Use the IIIT Sonepat logo.
+
+Do NOT make the logo huge.
+
+Possible design:
+
+small logo
+institution
+degree
+CGPA
+timeline
+
+Make it feel like a professional profile rather than a university admission page.
+
+==================================================
+14. TECHNICAL SKILLS — IMPORTANT
+==================================================
+
+This section should NOT look like a resume dump.
+
+Create category-based cards.
+
+Possible categories:
+
+Programming
+Frontend
+Backend
+Database
+Tools & Infrastructure
+AI / ML
+
+BUT ONLY create categories supported by my actual resume.
+
+Each category becomes a premium card.
+
+Example:
+
+┌────────────────────────────┐
+│ PROGRAMMING                │
+│                            │
+│  C++        Python         │
+│  JavaScript TypeScript     │
+│                            │
+└────────────────────────────┘
+
+Technology items should have:
+
+icon
+name
+
+Optionally a small contextual label.
+
+Do NOT use:
+
+95%
+90%
+Expert
+Advanced
+Beginner
+
+unless explicitly provided.
+
+Never create fake proficiency levels.
+
+==================================================
+15. SKILL CARD DESIGN
+==================================================
+
+The reference image uses simple light cards.
+
+Create a more premium version.
+
+Each category card should have:
+
+small category label
+subtle icon
+technology grid
+consistent spacing
+
+Hover:
+
+border slightly brightens
+card moves 1–2px
+technology icons subtly respond
+
+Do not make the cards glow.
+
+Do not use giant logos.
+
+Technology logos should have consistent visual weight.
+
+The overall grid should feel like a design system.
+
+Example:
+
+┌──────────────────────────────┐
+│ 01 / PROGRAMMING             │
+│                              │
+│ [C++]  [Python]              │
+│ [JS]   [TypeScript]          │
+│                              │
+└──────────────────────────────┘
+
+The "01 /" style is optional.
+
+Use it only if it improves the visual system.
+
+==================================================
+16. PROJECTS — HERO SECTION OF THE PORTFOLIO
+==================================================
+
+Projects are the most important proof of engineering ability.
+
+Give projects significantly more visual attention than certifications.
+
+Use project screenshots.
+
+Each project:
+
+IMAGE
+↓
+Project metadata
+↓
+Title
+↓
+Description
+↓
+Tech stack
+↓
+Links
+
+The screenshot should occupy approximately:
+
+16:9
+
+or another consistent professional ratio.
+
+Do not distort screenshots.
+
+==================================================
+17. PROJECT IMAGE DESIGN
+==================================================
+
+Project screenshots should feel like product previews.
+
+Add:
+
+subtle border
+rounded corners
+controlled overflow
+
+On hover:
+
+image scale 1.02–1.04
+
+The card itself should NOT dramatically move.
+
+Avoid excessive animations.
+
+If a screenshot has browser chrome, do not add another fake browser frame.
+
+If there is no project image:
+
+DO NOT generate a fake UI screenshot.
+
+Use an elegant placeholder based on project identity.
+
+==================================================
+18. PROJECT INFORMATION
+==================================================
+
+Each project must clearly communicate:
+
+WHAT IS IT?
+
+WHY DOES IT EXIST?
+
+WHAT DID I BUILD?
+
+WHAT TECHNOLOGIES DID I USE?
+
+WHERE CAN I SEE IT?
+
+Use concise descriptions.
+
+Do not dump the entire resume bullet points into cards.
+
+Transform long resume descriptions into readable portfolio copy WITHOUT changing the facts.
+
+For example:
+
+Resume:
+multiple long technical bullets
+
+Portfolio:
+2–4 concise lines communicating the product and important engineering work.
+
+==================================================
+19. PROJECT CARD ACTIONS
+==================================================
+
+Primary:
+
+[View Live ↗]
+
+Secondary:
+
+[GitHub ↗]
+
+Optional:
+
+[Case Study →]
+
+Buttons should not look like generic Bootstrap buttons.
+
+Use a strong primary button and subtle secondary action.
+
+Do not put 5 buttons on every card.
+
+Only display links that actually exist.
+
+==================================================
+20. PROJECT GRID
+==================================================
+
+Do NOT make every project card identical in height if the design becomes awkward.
+
+Consider:
+
+featured project:
+large / horizontal
+
+secondary projects:
+two-column grid
+
+This creates hierarchy.
+
+The strongest project should visually receive the most attention.
+
+Do NOT choose the featured project randomly.
+
+Use the strongest project based on:
+
+technical depth
+real-world usefulness
+quality of description
+available screenshot
+live demo
+
+If you cannot determine this confidently, use resume order.
+
+==================================================
+21. EXPERIENCE
+==================================================
+
+Create an editorial experience timeline.
+
+Each entry:
+
+Company
+Role
+Duration
+Location if available
+
+Then:
+
+2–4 concise achievement-oriented bullets.
+
+Use actual resume information.
+
+Do not rewrite achievements into fake metrics.
+
+Highlight technologies subtly.
+
+Avoid giant timeline dots and overly decorative timelines.
+
+==================================================
+22. ACHIEVEMENTS
+==================================================
+
+Do not make achievements look like generic cards.
+
+Create compact high-information rows.
+
+Example:
+
+ACHIEVEMENT
+──────────────────────────────
+Title                         2025
+Description
+Related link →
+
+This keeps the section dense and professional.
+
+==================================================
+23. CERTIFICATIONS
+==================================================
+
+Certifications should be visually secondary to projects.
+
+Display:
+
+Certification
+Issuer
+Date
+Credential link
+
+Use small icons.
+
+Do not create fake certificate thumbnails.
+
+==================================================
+24. CONTACT
+==================================================
+
+The contact section should feel like the natural ending of the page.
+
+Do not use:
+
+"Ready to take your business to the next level?"
+
+That sounds like an agency template.
+
+Use something personal and developer-oriented.
+
+Example style:
+
+"Have an interesting problem to solve?"
+
+Then:
+
+Email
+LinkedIn
+GitHub
+
+Optional:
+
+Contact form
+
+If the form is not connected to a service, DO NOT make it look functional.
+
+Use mailto or clearly prepare integration.
+
+==================================================
+25. FOOTER
+==================================================
+
+Minimal.
+
+Example:
+
+[Name]
+
+Software Engineer / Developer
+
+GitHub
+LinkedIn
+Email
+
+© 2026 [Name]
+
+Built with React + TypeScript.
+
+No unnecessary footer navigation.
+
+==================================================
+26. INTERACTION DESIGN
+==================================================
+
+Interactions should communicate quality.
+
+Use:
+
+- smooth scrolling
+- subtle reveal animations
+- button transitions
+- image hover
+- card hover
+- navbar transition
+- active navigation state
+
+Animation duration:
+
+approximately 150–400ms
+
+Use easing that feels natural.
+
+Avoid:
+
+- bouncing
+- spinning
+- excessive parallax
+- cursor-following effects
+- particles
+- flashy gradients
+- infinite animations
+
+The website should still feel premium with animations disabled.
+
+==================================================
+27. SCROLL EXPERIENCE
+==================================================
+
+The portfolio should feel like one continuous story.
+
+Suggested narrative:
+
+INTRODUCTION
+↓
+WHO I AM
+↓
+WHERE I STUDY
+↓
+WHAT I KNOW
+↓
+WHAT I HAVE BUILT
+↓
+WHERE I HAVE WORKED
+↓
+WHAT I HAVE ACHIEVED
+↓
+LET'S CONNECT
+
+Sections should transition naturally.
+
+Do not make each section feel like an independent template.
+
+==================================================
+28. RESPONSIVE DESIGN
+==================================================
+
+Design mobile FIRST.
+
+Test:
+
+375px
+390px
+430px
+768px
+1024px
+1280px
+1440px
+1920px
+
+At mobile:
+
+- no horizontal scrolling
+- project cards become single-column
+- skill cards adapt intelligently
+- buttons remain usable
+- typography scales naturally
+- navbar becomes compact
+- spacing decreases appropriately
+
+Do not simply shrink the desktop design.
+
+Actually redesign the composition for mobile.
+
+==================================================
+29. ACCESSIBILITY
+==================================================
+
+Use:
+
+semantic HTML
+proper heading hierarchy
+keyboard navigation
+visible focus states
+accessible buttons
+alt text
+ARIA labels when needed
+sufficient contrast
+
+Respect:
+
+prefers-reduced-motion
+
+==================================================
+30. PERFORMANCE
+==================================================
+
+The portfolio should load extremely quickly.
+
+Prioritize:
+
+fast initial render
+optimized images
+lazy-loaded project images
+minimal dependencies
+efficient React rendering
+small bundle
+
+Avoid unnecessary animation libraries.
+
+Do not install Framer Motion just for basic fade-ins.
+
+CSS transitions are enough for simple interactions.
+
+==================================================
+31. SEO
+==================================================
+
+Add:
+
+document title
+meta description
+Open Graph metadata
+favicon
+semantic HTML
+
+Use actual information from my resume.
+
+Do not keyword-stuff the page.
+
+==================================================
+32. DESIGN SYSTEM
+==================================================
+
+Create a small design system instead of styling everything independently.
+
+Define:
+
+colors
+spacing
+radius
+typography
+shadows
+transitions
+
+Use CSS variables where useful.
+
+Keep consistency across:
+
+buttons
+cards
+badges
+headings
+links
+sections
+
+==================================================
+33. COMPONENT ARCHITECTURE
+==================================================
+
+Use:
+
+src/
+│
+├── components/
+│   ├── layout/
+│   │   ├── Navbar.tsx
+│   │   └── Footer.tsx
+│   │
+│   ├── sections/
+│   │   ├── Hero.tsx
+│   │   ├── About.tsx
+│   │   ├── Education.tsx
+│   │   ├── Skills.tsx
+│   │   ├── Projects.tsx
+│   │   ├── Experience.tsx
+│   │   ├── Achievements.tsx
+│   │   ├── Certifications.tsx
+│   │   └── Contact.tsx
+│   │
+│   └── ui/
+│       ├── Button.tsx
+│       ├── SectionHeading.tsx
+│       ├── ProjectCard.tsx
+│       ├── SkillCard.tsx
+│       └── ...
+│
+├── data/
+│   └── portfolio.ts
+│
+├── assets/
+│   ├── projects/
+│   ├── icons/
+│   └── college/
+│
+├── App.tsx
+├── main.tsx
+└── index.css
+
+Do not create unnecessary abstractions.
+
+==================================================
+34. DATA ARCHITECTURE
+==================================================
+
+All personal content must live in:
+
+src/data/portfolio.ts
+
+Use TypeScript interfaces.
+
+Example:
+
+type Project = {
+  title: string;
+  year?: string;
+  description: string;
+  image?: string;
+  technologies: string[];
+  liveUrl?: string;
+  githubUrl?: string;
+  caseStudyUrl?: string;
+};
+
+type Experience = {
+  company: string;
+  role: string;
+  duration: string;
+  location?: string;
+  bullets: string[];
+  technologies?: string[];
+};
+
+Create similar types for:
+
+Education
+SkillCategory
+Achievement
+Certification
+SocialLinks
+
+==================================================
+35. RESUME → WEBSITE TRANSFORMATION
+==================================================
+
+When I provide the LaTeX resume:
+
+FIRST analyze it.
+
+Then create a content map:
+
+PERSONAL
+EDUCATION
+SKILLS
+PROJECTS
+EXPERIENCE
+ACHIEVEMENTS
+CERTIFICATIONS
+LINKS
+
+Then map that information into portfolio.ts.
+
+Do not immediately start designing before understanding the content.
+
+The website design should adapt to the actual amount of content.
+
+For example:
+
+If I have 3 projects:
+do NOT create an empty 6-project grid.
+
+If I have no certifications:
+do NOT create a giant empty certification section.
+
+If I have strong experience:
+give it more visual importance.
+
+The design should adapt to the content.
+
+==================================================
+36. IMPORTANT — NO FAKE CONTENT
+==================================================
+
+Never create filler such as:
+
+"Lorem ipsum"
+"Coming soon"
+"10+ projects"
+"1000+ users"
+"50k+ downloads"
+
+unless these facts are actually present.
+
+Do not create fake statistics just to make the hero look impressive.
+
+Real content > impressive-looking fake content.
+
+==================================================
+37. ANTI-AI DESIGN RULES
+==================================================
+
+This is extremely important.
+
+Avoid the following AI-generated website patterns:
+
+❌ Huge gradient blobs
+❌ Purple-blue AI gradients
+❌ Giant centered text
+❌ Floating 3D objects
+❌ Random glassmorphism
+❌ Excessive rounded cards
+❌ Excessive shadows
+❌ Neon borders
+❌ Glowing text
+❌ Fake metrics
+❌ Fake testimonials
+❌ Fake client logos
+❌ Fake reviews
+❌ Random emojis
+❌ Excessive badges
+❌ Skill percentages
+❌ Generic motivational quotes
+❌ "Welcome to my portfolio"
+❌ "I am a passionate developer"
+❌ Excessive animations
+❌ Cursor trails
+❌ Particle backgrounds
+❌ Over-designed loaders
+❌ Unnecessary dashboards
+
+Instead use:
+
+✓ typography
+✓ whitespace
+✓ hierarchy
+✓ real project screenshots
+✓ restrained color
+✓ subtle borders
+✓ carefully designed cards
+✓ editorial layouts
+✓ real content
+✓ meaningful interaction
+
+==================================================
+38. HUMAN TOUCH
+==================================================
+
+The website should have small imperfections that make it feel personal rather than generated.
+
+Examples:
+
+- subtle asymmetry
+- thoughtful spacing
+- varied section composition
+- concise personal copy
+- project-specific visual treatment
+- restrained technical details
+
+But do NOT intentionally make the site messy.
+
+The goal is:
+
+"designed"
+
+not:
+
+"template-generated."
+
+==================================================
+39. MOBILE EXPERIENCE
+==================================================
+
+Mobile is NOT an afterthought.
+
+On mobile:
+
+Hero should remain impactful.
+
+Project screenshots should remain prominent.
+
+Skill cards should stack intelligently.
+
+Experience should remain readable.
+
+Buttons should have enough touch area.
+
+Do not create tiny text.
+
+Do not create horizontal scrolling.
+
+==================================================
+40. FINAL QUALITY CHECK
+==================================================
+
+Before considering the project complete:
+
+Run:
+
+npm run build
+
+Fix ALL errors.
+
+Check:
+
+TypeScript
+imports
+links
+images
+responsive behavior
+navigation
+buttons
+accessibility
+console errors
+
+Verify:
+
+GitHub links
+Live links
+LinkedIn
+Email
+Resume
+
+Make sure external links use:
+
+target="_blank"
+rel="noopener noreferrer"
+
+where appropriate.
+
+==================================================
+41. FINAL DESIGN REVIEW
+==================================================
+
+Before finishing, ask yourself:
+
+1. Does this look like an AI-generated template?
+
+If YES → redesign.
+
+2. Is the first screen immediately understandable?
+
+If NO → improve hero.
+
+3. Are projects visually the strongest proof?
+
+If NO → improve project section.
+
+4. Does the skills section look like a resume dump?
+
+If YES → redesign it.
+
+5. Are there too many colors?
+
+If YES → simplify.
+
+6. Are there too many rounded cards?
+
+If YES → simplify.
+
+7. Are animations distracting?
+
+If YES → remove them.
+
+8. Does the website still look good without animations?
+
+If NO → redesign.
+
+9. Does mobile feel intentionally designed?
+
+If NO → fix it.
+
+10. Does the site feel like a real engineer built it?
+
+If NO → keep refining.
+
+==================================================
+42. FINAL RESULT
+==================================================
+
+The final website should feel like:
+
+A premium personal website for a serious software engineer.
+
+Not:
+
+A student template.
+
+Not:
+
+A SaaS landing page.
+
+Not:
+
+An AI-generated portfolio.
+
+Not:
+
+A Dribbble experiment.
+
+The visitor should quickly understand:
+
+WHO I AM
+WHAT I BUILD
+WHAT I KNOW
+WHAT I HAVE BUILT
+WHAT I HAVE ACHIEVED
+HOW TO CONTACT ME
+
+The strongest visual emphasis should be:
+
+1. Hero
+2. Projects
+3. Skills
+4. Experience
+5. Education
+6. Achievements / Certifications
+7. Contact
+
+==================================================
+43. IMPORTANT — DO NOT STOP AT A BASIC VERSION
+==================================================
+
+Do not produce a basic portfolio and call it complete.
+
+Spend time refining:
+
+spacing
+typography
+card proportions
+image treatment
+responsive behavior
+button hierarchy
+section transitions
+hover states
+navigation
+visual rhythm
+
+The final result should feel like a portfolio that has gone through multiple design iterations.
+
+==================================================
+44. AFTER IMPLEMENTATION
+==================================================
+
+At the end, report:
+
+1. Final tech stack
+2. Folder structure
+3. Sections implemented
+4. Backend requirement
+5. How portfolio data is managed
+6. How to add a new project
+7. How to replace project images
+8. How to replace the resume
+9. How to deploy
+10. Any missing information that I need to provide
+
+Most importantly:
+
+DO NOT invent any information.
+
+DO NOT sacrifice design quality for unnecessary complexity.
+
+DO NOT sacrifice performance for visual effects.
+
+DO NOT sacrifice usability for aesthetics.
+
+Build something that looks like a REAL PREMIUM DEVELOPER PORTFOLIO.
