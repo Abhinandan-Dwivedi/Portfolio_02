@@ -1,0 +1,1 @@
+- [Full-page screenshot assets](full-page-screenshot-assets.md) — eager-load small below-the-fold screenshots so preview captures include them.

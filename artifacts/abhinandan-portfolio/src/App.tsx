@@ -1,4 +1,4 @@
-import { type CSSProperties, type ReactNode, useEffect, useState } from 'react';
+import { type ReactNode, useEffect, useState } from 'react';
 import {
   ArrowDownRight,
   ArrowUpRight,
@@ -9,16 +9,14 @@ import {
   Phone,
   X,
 } from 'lucide-react';
+import { SkillsSection } from '@/components/skills-section';
 import {
   achievements,
   education,
   experience,
   personalInfo,
   projects,
-  skillCategories,
 } from '@/data/portfolio';
-
-type BarStyle = CSSProperties & { '--bar': string };
 
 const navigation = [
   { label: 'About', id: 'about' },
@@ -53,37 +51,15 @@ function ExternalAnchor({
   );
 }
 
-function ProjectArtwork({ type, title }: { type: string; title: string }) {
-  if (type === 'play') {
-    return (
-      <div className="project-art art-play" role="img" aria-label={`${title} abstract project artwork`}>
-        <div className="art-orbit"><span className="play-mark">P</span></div>
-      </div>
-    );
-  }
-  if (type === 'fleet') {
-    return (
-      <div className="project-art art-fleet" role="img" aria-label={`${title} abstract project artwork`}>
-        <span className="route-line" />
-        <span className="map-node node-one" />
-        <span className="map-node node-two" />
-        <span className="map-node node-three" />
-        <span className="fleet-coordinates">TRACK / ROUTE / LIVE</span>
-      </div>
-    );
-  }
+function ProjectPreview({ source, title }: { source: string; title: string }) {
   return (
-    <div className="project-art art-investor" role="img" aria-label={`${title} abstract project artwork`}>
-      <span className="investor-code">RESEARCH / SIGNAL / SOURCE</span>
-      <div className="data-stack" aria-hidden="true">
-        <i style={{ '--bar': '39%' } as BarStyle} />
-        <i style={{ '--bar': '64%' } as BarStyle} />
-        <i style={{ '--bar': '48%' } as BarStyle} />
-        <i style={{ '--bar': '82%' } as BarStyle} />
-        <i style={{ '--bar': '58%' } as BarStyle} />
-        <i style={{ '--bar': '100%' } as BarStyle} />
-        <i style={{ '--bar': '72%' } as BarStyle} />
-      </div>
+    <div className="project-art project-screenshot">
+      <img
+        src={source}
+        alt={`${title} project screenshot`}
+        loading="eager"
+        fetchPriority="high"
+      />
     </div>
   );
 }
@@ -265,30 +241,7 @@ function App() {
           </div>
         </section>
 
-        <section className="section" id="skills" aria-labelledby="skills-title">
-          <div className="site-shell">
-            <div className="section-heading">
-              <div className="section-index">03 / Toolkit</div>
-              <div>
-                <h2 className="section-title" id="skills-title">Tools I work with.</h2>
-                <p className="section-intro">A practical toolkit across application development, data, AI integrations, and computer science fundamentals.</p>
-              </div>
-            </div>
-            <div className="skills-grid">
-              {skillCategories.map((category, index) => (
-                <article className="skill-card" key={category.title} data-testid={`card-skill-${index + 1}`}>
-                  <div className="skill-card-head">
-                    <span className="skill-number">{String(index + 1).padStart(2, '0')}</span>
-                    <h3>{category.title}</h3>
-                  </div>
-                  <div className="skill-items">
-                    {category.items.map((item) => <span className="skill-chip" key={item}>{item}</span>)}
-                  </div>
-                </article>
-              ))}
-            </div>
-          </div>
-        </section>
+        <SkillsSection />
 
         <section className="section projects-section" id="projects" aria-labelledby="projects-title">
           <div className="site-shell">
@@ -302,7 +255,7 @@ function App() {
             <div className="projects-list">
               {projects.map((project, index) => (
                 <article className="project-card" key={project.name} data-testid={`card-project-${index + 1}`}>
-                  <ProjectArtwork type={project.art} title={project.name} />
+                  <ProjectPreview source={project.image} title={project.name} />
                   <div className="project-content">
                     <div className="project-topline">
                       <span>0{index + 1} / Project</span>

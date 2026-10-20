@@ -16,7 +16,7 @@ export type Project = {
   technologies: string[];
   github: string;
   live?: string;
-  art: 'play' | 'fleet' | 'investor';
+  image: string;
 };
 
 export const personalInfo = {
@@ -80,7 +80,7 @@ export const projects: Project[] = [
     technologies: ['MERN', 'Gemini API', 'Cloudinary', 'JWT', 'MongoDB'],
     github: 'https://github.com/Abhinandan-Dwivedi/Play-app',
     live: 'https://play-app-frontend-seven.vercel.app/',
-    art: 'play',
+    image: '/projects/play.png',
   },
   {
     name: 'FleetTrack',
@@ -91,7 +91,7 @@ export const projects: Project[] = [
     technologies: ['Next.js', 'TypeScript', 'tRPC', 'PostgreSQL', 'Prisma', 'Pusher', 'Leaflet'],
     github: 'https://github.com/Abhinandan-Dwivedi/fleet-tracker',
     live: 'https://fleet-tracker-tau.vercel.app/',
-    art: 'fleet',
+    image: '/projects/fleettrack.png',
   },
   {
     name: 'AI-Powered Investor Decision Intelligence',
@@ -100,7 +100,7 @@ export const projects: Project[] = [
       'A full-stack RAG platform that answers investor questions over annual reports with cited sources. PDF ingestion, semantic retrieval, cross-encoder reranking, KPI extraction, and an evaluation harness form the research pipeline.',
     technologies: ['Python', 'FastAPI', 'React', 'Qdrant', 'PostgreSQL', 'Docker', 'Gemini API'],
     github: 'https://github.com/Abhinandan-Dwivedi/AI-Powered-Investor-Decision-Intelligence',
-    art: 'investor',
+    image: '/projects/investor-decision-intelligence.png',
   },
 ];
 
